@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amigo</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body ng-app="amigo">
+    	<header id="header">
+                <div class="inner">
+                    <div class="content">
+                        <h1>AMIGO</h1>
+                        <h2>A Stress Buster - AI Bot
+                        </h2>
+                        <a href="#" class="button big alt"><span>Let's Go</span></a>
+                    </div>
+                    <a href="#" class="button hidden"><span>Let's Go</span></a>
+                </div>
+            </header>
+    <div id="content">    
+                <div id="side_nav">
+                        <ul>
+                            <li><a href="#/"><i class="fa fa-home"></i>
+                             
+                            </a></li>
+                            <li><a href="#/chat"><i class="fa fa-comment"></i>
+                           
+                            </a></li>
+                            <li><a href="#/map"><i class="fa fa-map-marker"></i>
+                            </a></li>
+                            <li><a href="#/history"><i class="fa fa-history"></i>
+                            </a></li>                         
+                        </ul>
+                    </div>
+                    <div>
+                        <ng-view>
+
+                        </ng-view>
+                    </div>
+    </div>
+
+    <!-- Footer -->
+			<footer id="footer">
+                    <a href="#" class="info fa fa-info-circle"><span>About</span></a>
+                    <div class="inner">
+                        <div class="content">
+                            <h3>Vestibulum hendrerit tortor id gravida</h3>
+                            <p>In tempor porttitor nisl non elementum. Nulla ipsum ipsum, feugiat vitae vehicula vitae, imperdiet sed risus. Fusce sed dictum neque, id auctor felis. Praesent luctus sagittis viverra. Nulla erat nibh, fermentum quis enim ac, ultrices euismod augue. Proin ligula nibh, pretium at enim eget, tempor feugiat nulla.</p>
+                        </div>
+                        <div class="copyright">
+                            <h3>Follow me</h3>
+                            <ul class="icons">
+                                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+                            </ul>
+                            &copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>.
+                        </div>
+                    </div>
+                </footer>
+                            
+             
+                     
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js" ></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/config/routesconst.js"></script>
+    <script src="assets/js/mapcontroller.js"></script>
+    <script src="assets/js/sparoutes.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>  
+    <script src="assets/js/main.js"></script>
+    <script>
+        window.addEventListener("load",bind);
+        var msg;
+        var message;
+        function bind(){
+            document.getElementById("buttonInput").addEventListener("click",()=>{
+            msg=document.getElementById("textInput").value;
+            console.log(msg);
+            var userHtml = document.createElement("p");
+            userHtml.innerHTML=msg;
+            document.getElementById("textInput").value = "";
+            var chatbox=document.getElementById("chatbox");
+            chatbox.append(userHtml.innerHTML);
+            doAjax();
+        });
+        function doAjax(){
+            var xmlHttpReq= new XMLHttpRequest();
+            xmlHttpReq.open('GET','http://127.0.0.1:5000');
+            xmlHttpReq.onreadystatechange=function(){//binding is done earlier so that data is always avilable on call to server via send
+                console.log(xmlHttpReq.readyState);
+                console.log(xmlHttpReq.status)
+                if(xmlHttpReq.readyState==4 && xmlHttpReq.status==200){
+                    console.log(xmlHttpReq.responseText);
+                    print(xmlHttpReq.responseText);
+                    message=JSON.parse(msg);
+                }
+            }
+            xmlHttpReq.send(msg);//makes a call to the server  send takes object as an argument
+            console.log("Send Call");
+        }
+        }
+        function print(object){
+            var obj =JSON.parse(object);
+            document.querySelector("#msg").innerHTML= "IP is " + obj.ip + " Country is " + obj.country_code;
+        }
+    </script>
+</body>
+</html>
