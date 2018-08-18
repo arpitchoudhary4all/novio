@@ -1,0 +1,27 @@
+﻿"- How are you?\n- I am Fine",
+      
+       "- hey i m feeling low\n- how long u have been going thorugh a hard time.",
+      "- from about a month\n- In your life now, do you feel like you have no support, 
+      a little support, or a lot of support?.",
+      "- A little support\n- You're doing great! Just a bit more to go to get connected to your therapist.
+      \n I have found a nearby therapist for You.His name is Dr. Clay Jensen \n phone number is 98********",
+      "- i m quite lonely today.\n- Got it, I know loneliness can be hard to manage alone.. 
+      I'm really glad you found us.We can chat to reduce your loneliness and make things easier for you with simple.",
+
+
+      ["I am not feeling well",
+      "I am Here to help u. feel free to share with me",
+      ]
+      [
+        "I am not in a good modd today","I m there to support you. you can share everything with me.
+       tell me what happend"
+      ]
+      [
+        "I m quite depressed?","Shall I play music for u  or u want some good music suggestions?",
+        "I would go for bollywood?","If we go for some soothing taste then we can play Buddhu Sa Mann or
+       if we go some romantic song then dil di yan galla or if we go for sad song then ek raat is best"
+      ]
+      [
+        "I m happy today I achieved my goal","Ohh Wow!That's so good to hear, Shall we have a party tonight?",
+        "Yeah sure we can have a party?","Okay, We will meet at 8:00pm and go for a dance party"
+      ]

@@ -1,9 +1,11 @@
 body {
     font-family: Garamond;
+    background-image: url(login_bg.png);
+    background-size: cover;   
 }
 
 h1 {
-    color: black;
+    color: white;
     margin-bottom: 0;
     margin-top: 0;
     text-align: center;
@@ -11,7 +13,7 @@ h1 {
 }
 
 h3 {
-    color: black;
+    color: white;
     font-size: 20px;
     margin-top: 3px;
     text-align: center;
@@ -32,17 +34,27 @@ h3 {
 }
 
 #textInput {
-    width: 87%;
-    border: none;
-    border-bottom: 3px solid #009688;
+  width: 87%;
+        
     font-family: monospace;
-    font-size: 17px;
+    font-size: 20px;
+    background-color: white;
+    color: #273C75;
+    border: 1.5px solid #273C75;
+    padding: 8px;
+    border-radius: 6px;
 }
 
+
 #buttonInput {
-    padding: 3px;
-    font-family: monospace;
-    font-size: 17px;
+  padding: 5px;
+    font-family: sans-serif;
+    font-size: 16px;
+    border: 1px solid #273C75;
+    background-color: white;
+    color: #273C75;
+    border-radius: 5px;
+    padding: 7px;
 }
 
 .userText {
@@ -54,9 +66,11 @@ h3 {
 }
 
 .userText span {
-    background-color: #009688;
+  background-color: white;
+    color: #273C75;
     padding: 10px;
-    border-radius: 2px;
+    border: 1px solid #273C75;
+    border-radius: 5px;
 }
 
 .botText {
@@ -68,9 +82,11 @@ h3 {
 }
 
 .botText span {
-    background-color: #EF5350;
+    background-color: white;
+    color: #273C75;
     padding: 10px;
-    border-radius: 2px;
+    border: 1px solid #273C75;
+    border-radius: 5px;
 }
 
 #tidbit {
